@@ -24,6 +24,8 @@ Param (
 $ErrorActionPreference = "Stop";
 
 if ($InitEnv) {
+    Copy-Item .\.env.template .\.env
+
     if (-not $LicenseXmlPath.EndsWith("license.xml")) {
         Write-Error "Sitecore license file must be named 'license.xml'."
     }
